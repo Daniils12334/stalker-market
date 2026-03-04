@@ -15,7 +15,7 @@ const AccountDetail = () => {
         <div className="detail-content">
           <p>{account.desc}</p>
           <p>Price: {account.price}</p>
-          <p>TextTextTextTextTextTextTextTextTextText</p>
+          <p>After pursching you will reciev your product on email</p>
           <button className="btn btn-primary">BUY NOW</button>
         </div>
       </div>

@@ -24,7 +24,7 @@ const SiaPage = ({ openImageModal, openPaymentModal }) => {
     <section className="sia-page">
       <div className="container">
         <div className="page-header">
-          <h1 className="page-title">SIA EXPERIENCE</h1>
+          <h1 className="page-title">SEA EXPERIENCE</h1>
           <div className="status-indicator">
             <span className="green-dot"></span>
             <span className="status-text">undetected, last detect 12.03.2025</span>
@@ -42,7 +42,7 @@ const SiaPage = ({ openImageModal, openPaymentModal }) => {
           ))}
         </div>
         <div className="video-section">
-          <h2 className="subtitle">WATCH SIA IN ACTION</h2>
+          <h2 className="subtitle">WATCH SEA IN ACTION</h2>
           <div className="video-wrapper">
             <iframe 
               width="100%" 

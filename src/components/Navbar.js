@@ -1,4 +1,3 @@
-// components/Navbar.js
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
@@ -43,7 +42,7 @@ const Navbar = ({ openAuthModal }) => {
         <ul className="nav-links">
           <li><a href="/" onClick={handleHomeClick} className={location.pathname === '/' && !location.hash ? 'active' : ''}>Home</a></li>
           <li><a href="#dlc" onClick={(e) => handleHashLink(e, '#dlc')} className={isActive('#dlc') ? 'active' : ''}>DLC</a></li>
-          <li><Link to="/sia" className={isActive('/sia') ? 'active' : ''}>SIA</Link></li>
+          <li><Link to="/sia" className={isActive('/sia') ? 'active' : ''}>SEA</Link></li>
           <li><a href="#accounts" onClick={(e) => handleHashLink(e, '#accounts')} className={isActive('#accounts') ? 'active' : ''}>Accounts</a></li>
           <li><Link to="/gpt" className={isActive('/gpt') ? 'active' : ''}>GPT</Link></li>
           <li><a href="#faq" onClick={(e) => handleHashLink(e, '#faq')} className={isActive('#faq') ? 'active' : ''}>FAQ</a></li>

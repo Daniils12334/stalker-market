@@ -7,7 +7,7 @@ const AccountsPage = () => {
   return (
     <section className="accounts-page">
       <div className="container">
-        <h1 className="page-title">All Premium Accounts</h1>
+        <h1 className="page-title"> Accounts</h1>
         <div className="accounts-grid">
           {accountsList.map((account, idx) => (
             <Link to={`/account/${encodeURIComponent(account.name)}`} className="card premium-card" key={idx}>
