@@ -3,14 +3,8 @@ import React from 'react';
 import UpdateLog from '../components/UpdateLog';
 
 const gptUpdates = [
-  "1.2.0.1 Update (GPT) – Click Update in the SEA launcher",
-  "1: Enhanced AI targeting",
-  "2: Improved ESP performance",
-  "3: Fixed crash on startup",
-  "4: Added new radar features",
-  "5: Optimized memory usage",
-  "6: Compatibility with latest game patch",
-  "7: Aimbot improvements coming soon"
+  "1.2.0.1 Update (GPT) – Click Update in the SEA launcher"
+
 ];
 
 const GptPage = ({ openImageModal, openPaymentModal }) => {

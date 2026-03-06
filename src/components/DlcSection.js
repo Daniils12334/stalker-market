@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 export const dlcItems = [
   { name: 'SIA', img: 'assets/sialogo.png', link: '/sia', price: '$49.99' },
   { name: 'GPT', img: 'assets/gptlogo.png', link: '/gpt', price: '$39.99' },
-  { name: 'IA', img: 'assets/sea3.png', price: '$29.99' },
   { name: 'REX', img: 'assets/sea4.png', price: '$34.99' },
   { name: 'DEX', img: 'assets/sea5.png', price: '$24.99' },
   { name: 'Ark-Tribe-Logger', img: 'assets/sea6.png', price: '$19.99' },
