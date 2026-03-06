@@ -16,8 +16,13 @@ const AccountDetail = () => {
         <div className="detail-content">
           <p>{account.desc}</p>
           <p>Price: {account.price}</p>
+<<<<<<< HEAD
           <p>TextTextTextTextTextTextTextTextTextText</p>
           <button className="btn btn-primary" onClick={() => addToCart(account)}>BUY NOW</button>
+=======
+          <p>After pursching you will reciev your product on email</p>
+          <button className="btn btn-primary">BUY NOW</button>
+>>>>>>> 356fa2286f5c3d4c795b5123630c692f6b4bbc6a
         </div>
       </div>
     </section>

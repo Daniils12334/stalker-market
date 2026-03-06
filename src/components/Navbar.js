@@ -39,6 +39,10 @@ const Navbar = ({ openAuthModal, openCart }) => {
       <div className="nav-menu">
         <ul className="nav-links">
           <li><a href="/" onClick={handleHomeClick} className={location.pathname === '/' && !location.hash ? 'active' : ''}>Home</a></li>
+<<<<<<< HEAD
+=======
+          <li><a href="#dlc" onClick={(e) => handleHashLink(e, '#dlc')} className={isActive('#dlc') ? 'active' : ''}>DLC</a></li>
+>>>>>>> 356fa2286f5c3d4c795b5123630c692f6b4bbc6a
           <li><Link to="/sia" className={isActive('/sia') ? 'active' : ''}>SEA</Link></li>
           <li><a href="#accounts" onClick={(e) => handleHashLink(e, '#accounts')} className={isActive('#accounts') ? 'active' : ''}>Accounts</a></li>
           <li><Link to="/gpt" className={isActive('/gpt') ? 'active' : ''}>GPT</Link></li>

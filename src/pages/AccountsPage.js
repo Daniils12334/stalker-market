@@ -9,7 +9,7 @@ const AccountsPage = () => {
   return (
     <section className="accounts-page">
       <div className="container">
-        <h1 className="page-title">All Premium Accounts</h1>
+        <h1 className="page-title"> Accounts</h1>
         <div className="accounts-grid">
           {accountsList.map((account) => (
             <div className="card premium-card" key={account.id}>
