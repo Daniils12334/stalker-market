@@ -1,12 +1,13 @@
-// pages/AccountDetail.js
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { accountsList } from '../components/AccountsSection';
+import { useCart } from '../context/CartContext';
 
 const AccountDetail = () => {
   const { accountName } = useParams();
   const decodedName = decodeURIComponent(accountName);
-  const account = accountsList.find(acc => acc.name === decodedName) || { name: decodedName, price: '$29.99', desc: '' };
+  const account = accountsList.find(acc => acc.name === decodedName) || { id: 'unknown', name: decodedName, price: '$29.99', desc: '' };
+  const { addToCart } = useCart();
 
   return (
     <section className="detail-page">
@@ -16,7 +17,7 @@ const AccountDetail = () => {
           <p>{account.desc}</p>
           <p>Price: {account.price}</p>
           <p>TextTextTextTextTextTextTextTextTextText</p>
-          <button className="btn btn-primary">BUY NOW</button>
+          <button className="btn btn-primary" onClick={() => addToCart(account)}>BUY NOW</button>
         </div>
       </div>
     </section>

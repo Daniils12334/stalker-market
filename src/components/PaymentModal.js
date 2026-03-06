@@ -1,4 +1,3 @@
-// components/PaymentModal.js
 import React from 'react';
 
 const PaymentModal = ({ isOpen, onClose }) => {
@@ -10,11 +9,11 @@ const PaymentModal = ({ isOpen, onClose }) => {
         <button className="modal-close" onClick={onClose}>×</button>
         <h2 className="modal-title">Payment Options</h2>
         <div className="payment-icons-large">
-          <img src="assets/Visa.png" alt="Visa" />
-          <img src="assets/Mastercard.png" alt="Mastercard" />
-          <img src="assets/Etherium.png" alt="Ethereum" />
+          {/* Вместо Visa/Mastercard/Ethereum */}
+          <span style={{ fontSize: '2rem', margin: '0 1rem' }}>PayPal</span>
+          <span style={{ fontSize: '2rem', margin: '0 1rem' }}>₿ Crypto</span>
         </div>
-        <p className="eth-note">Get 10% bonus when you pay with ETH</p>
+        <p className="eth-note">Pay with PayPal or Crypto (BTC, ETH, USDT)</p>
         <p className="modal-note">Secure and instant transactions</p>
       </div>
     </div>

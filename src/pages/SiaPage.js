@@ -1,35 +1,71 @@
-// pages/SiaPage.js
-import React from 'react';
+import React, { useState } from 'react';
 import UpdateLog from '../components/UpdateLog';
+import { useCart } from '../context/CartContext';
 
-const siaUpdates = [
-  "1.1.0.3 Update (SIA) – Click Update in the SEA launcher",
-  "1: Repair Ghost Mode",
-  "2: Repair the Air Stack",
-  "3: Fix speed dino",
-  "4: Repair desync",
-  "5: Repair automatic nail changing and flashing back",
-  "6: Repair automatic storage Tek dedi box",
-  "7: Optimize EPIC compatibility",
-  "8: Aimbot is scheduled to be fixed soon"
-];
+const siaUpdates = [ /* ... массив обновлений ... */ ];
 
 const SiaPage = ({ openImageModal, openPaymentModal }) => {
-  const siaImages = [
-    'assets/sea1.png', 'assets/sea2.png', 'assets/sea3.png', 'assets/sea4.png',
-    'assets/sea5.png', 'assets/sea6.png', 'assets/sea7.png', 'assets/sea8.png'
-  ];
+  const { addToCart } = useCart();
+
+  // Определяем доступные версии
+  const versions = {
+    vip: { name: 'VIP', price: 49.99, multiplier: 1 },
+    svip: { name: 'SVIP', price: 79.99, multiplier: 1.6 },
+  };
+
+  const [selectedVersion, setSelectedVersion] = useState('vip');
+
+  const getProductForVersion = (versionKey) => {
+    const version = versions[versionKey];
+    return {
+      id: `sea-${versionKey}`,          // уникальный id для каждой версии
+      name: `SEA EXPERIENCE (${version.name})`,
+      baseName: 'SEA EXPERIENCE',
+      version: version.name,
+      price: `$${version.price.toFixed(2)}`,
+      img: 'assets/sea1.png',
+    };
+  };
+
+  const handleAddToCart = () => {
+    addToCart(getProductForVersion(selectedVersion));
+  };
+
+  const handleBuyNow = () => {
+    // Можно сразу добавить в корзину и открыть оплату, или просто открыть оплату
+    // По желанию: addToCart(...); openPaymentModal();
+    openPaymentModal();
+  };
+
+  const siaImages = [ /* ... массив изображений ... */ ];
 
   return (
     <section className="sia-page">
       <div className="container">
         <div className="page-header">
-          <h1 className="page-title">SIA EXPERIENCE</h1>
+          <h1 className="page-title">SEA EXPERIENCE</h1>
           <div className="status-indicator">
             <span className="green-dot"></span>
             <span className="status-text">undetected, last detect 12.03.2025</span>
           </div>
         </div>
+
+        {/* Блок выбора версии */}
+        <div className="version-selector">
+          <h3>Choose your version:</h3>
+          <div className="version-buttons">
+            {Object.entries(versions).map(([key, v]) => (
+              <button
+                key={key}
+                className={`version-btn ${selectedVersion === key ? 'active' : ''}`}
+                onClick={() => setSelectedVersion(key)}
+              >
+                {v.name} — ${v.price}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="gallery-grid">
           {siaImages.map((img, idx) => (
             <img
@@ -41,8 +77,9 @@ const SiaPage = ({ openImageModal, openPaymentModal }) => {
             />
           ))}
         </div>
+
         <div className="video-section">
-          <h2 className="subtitle">WATCH SIA IN ACTION</h2>
+          <h2 className="subtitle">WATCH SEA IN ACTION</h2>
           <div className="video-wrapper">
             <iframe 
               width="100%" 
@@ -54,10 +91,13 @@ const SiaPage = ({ openImageModal, openPaymentModal }) => {
             ></iframe>
           </div>
         </div>
+
         <UpdateLog updates={siaUpdates} />
+
         <div className="buy-section price-row">
-          <span className="price-large">$49.99</span>
-          <button className="btn btn-primary" onClick={openPaymentModal}>BUY NOW</button>
+          <span className="price-large">${versions[selectedVersion].price}</span>
+          <button className="btn btn-primary" onClick={handleBuyNow}>BUY NOW</button>
+          <button className="btn btn-secondary" onClick={handleAddToCart}>ADD TO CART</button>
         </div>
       </div>
     </section>

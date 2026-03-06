@@ -10,7 +10,7 @@ const SiaSection = ({ openImageModal }) => {
   return (
     <section id="sia" className="section">
       <div className="container">
-        <h2 className="section-title">SIA EXPERIENCE</h2>
+        <h2 className="section-title">SEA EXPERIENCE</h2>
         <div className="gallery-grid">
           {siaImages.map((img, idx) => (
             <img
@@ -23,7 +23,7 @@ const SiaSection = ({ openImageModal }) => {
           ))}
         </div>
         <div className="svip-video">
-          <h3 className="subtitle">WATCH SIA IN ACTION</h3>
+          <h3 className="subtitle">WATCH SEA IN ACTION</h3>
           <div className="video-wrapper">
             <iframe width="100%" height="450" src="https://www.youtube.com/embed/UrSILtu_zEQ" title="YouTube" frameBorder="0" allowFullScreen></iframe>
           </div>
